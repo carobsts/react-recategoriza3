@@ -1,0 +1,89 @@
+.Bill__card {
+    width: 100%;
+    background-color: #FFF;
+    color: #006da1;
+    border-left: 8px solid #006da1;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.Bill__container {
+    width: 100%;
+}
+
+.Bill__container > div {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.Bill__container > div > p {
+    margin: 0;
+    height: 25px;
+}
+
+.Bill__container > div > p:first-child {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.Footer__container {
+    position: absolute;
+    width: 90%;
+    box-sizing: border-box;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    bottom: 0;
+    border-top: 1px solid #e7e2e2d8;
+}
+
+.App__container {
+    width: 90%;
+    margin: auto;
+}
+
+.App__title {
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 5px 0;
+}
+
+.App__subtitle {
+    font-size: 0.9rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e7e2e2d8;
+    width: 200px;
+    margin: auto !important;
+}
+
+.Table__container {
+    width: 100%;
+    overflow: auto;
+}
+
+.App__buttonCamera {
+    position: absolute !important;
+    width: 60px;
+    height: 60px;
+    right: 0;
+    top: 0;
+    margin: 20px !important;
+}
+
+.Table__label {
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+}
