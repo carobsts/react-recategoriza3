@@ -32,6 +32,7 @@ const QrScannerComponent = () => {
     return(
       <div>
         <QrReader
+          facingMode="rear"
           style={previewStyle}
           onScan={handleScan}
         />
@@ -41,7 +42,7 @@ const QrScannerComponent = () => {
 
 const QrPage = () => {
     return (
-        <QrScannerComponent/>
+      <QrScannerComponent/>
     )
 };
 
