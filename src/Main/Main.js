@@ -36,6 +36,7 @@ const Main = () => {
            </Typography>
            <Table bills={bills}/>
            <Footer 
+           filename="Honorarios para recategorización de Monotributo"
            tableName="Honorarios para recategorización de Monotributo"
            dataSet={bills}/>
        </div>

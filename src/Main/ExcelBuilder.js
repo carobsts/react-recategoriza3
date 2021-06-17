@@ -8,11 +8,17 @@ const ExcelColumn = ReactExport.ExcelFile.ExcelColumn;
 
 const ExcelBuilder = ({
     dataSet,
-    tableName
+    tableName,
+    fileName
 }) => {
     return (
-        <ExcelFile element={
-        <Button variant="contained" color="primary">Generar Excel</Button>
+        <ExcelFile 
+        filename={fileName}
+        element={
+        <Button 
+        disabled={dataSet.length > 0 ? false : true}
+        variant="contained" 
+        color="primary">Generar Excel</Button>
         }>
             <ExcelSheet data={dataSet} name={tableName}>
                 <ExcelColumn label="Razón Social" value="nroDocRec"/>
