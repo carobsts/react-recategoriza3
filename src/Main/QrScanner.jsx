@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
-import BarcodeReader from 'react-barcode-reader';
+import BarcodeScannerComponent from 'react-qr-barcode-scanner';
 import { useHistory } from 'react-router';
 import { paths } from '../Routes/paths';
 import './styles.css';
+import { useDisplaySize } from '../hooks/useDisplaySize';
 
 const QrScannerComponent = () => {
 
     const history = useHistory();
     const [ result, setResult ] = useState();
-  
-    function handleScan(data) {
-       setResult(data);
-    };
+    const { widthSize, heightSize } = useDisplaySize();
 
     if (result) {
         let code = result.split('=')[1];
@@ -24,20 +22,16 @@ const QrScannerComponent = () => {
 
     return(
       <div>
-        <div className="ButtonCameraFixed">
-          {/* <Button 
-          onClick={() => facingMode === 'environment' 
-          ? setFacingMode('user') 
-          : setFacingMode('environment')}
-          variant="contained" color="primary"
-          >
-            <SwapVertIcon/>
-          </Button> */}
-        </div>
         <div>
-          <BarcodeReader
-          onScan={handleScan}
-          />
+          <BarcodeScannerComponent
+          width={widthSize}
+          height={heightSize}
+          onUpdate={(err, result) => {
+            if (result) {
+              setResult(result.text);
+            }
+          }}
+        />
         </div>
       </div>
     )
