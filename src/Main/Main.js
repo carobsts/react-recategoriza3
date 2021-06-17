@@ -17,12 +17,8 @@ const Main = () => {
     
     useEffect(() => {
         if (localStore) {
-            setLoading(true);
-            setTimeout(() => {
-                setLoading(false);
-                let data = JSON.parse(localStore);
-                setBills(data);
-            }, 500)
+            let data = JSON.parse(localStore);
+            setBills(data);
         } else {
             setLoading(true);
             setTimeout(() => {
