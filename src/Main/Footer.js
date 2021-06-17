@@ -3,11 +3,16 @@ import ExcelBuilder from './ExcelBuilder';
 import './styles.css';
 
 const Footer = ({
-    dataSet
+    dataSet,
+    fileName,
+    tableName
 }) => {
     return (
         <div className="Footer__container">
-            <ExcelBuilder dataSet={dataSet}/>
+            <ExcelBuilder
+            filename={fileName}
+            tableName={tableName}
+            dataSet={dataSet}/>
         </div>
     )
 };
