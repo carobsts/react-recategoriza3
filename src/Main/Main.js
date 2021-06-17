@@ -40,7 +40,7 @@ const Main = () => {
            <Footer 
            setBills={setBills}
            setLoading={setLoading}
-           filename="Honorarios para recategorización de Monotributo"
+           filename="recategorizacion_monotributo"
            tableName="Honorarios para recategorización de Monotributo"
            dataSet={bills}/>
            <BackdropComponent loading={loading}/>
