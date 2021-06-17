@@ -23,7 +23,7 @@ const ExcelBuilder = ({
                 localStorage.removeItem('data');
                 setTimeout(() => {
                     setLoading(false)
-                }) 
+                }, 500) 
             }}
             disabled={dataSet.length > 0 ? false : true}
             variant="contained" 
