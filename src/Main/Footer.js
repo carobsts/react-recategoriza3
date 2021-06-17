@@ -5,11 +5,13 @@ import './styles.css';
 const Footer = ({
     dataSet,
     fileName,
-    tableName
+    tableName,
+    setLoading
 }) => {
     return (
         <div className="Footer__container">
             <ExcelBuilder
+            setLoading={setLoading}
             filename={fileName}
             tableName={tableName}
             dataSet={dataSet}/>

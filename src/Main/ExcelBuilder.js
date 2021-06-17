@@ -9,25 +9,34 @@ const ExcelColumn = ReactExport.ExcelFile.ExcelColumn;
 const ExcelBuilder = ({
     dataSet,
     tableName,
-    fileName
+    fileName, 
+    setLoading
 }) => {
     return (
-        <ExcelFile 
-        filename={fileName}
-        element={
-        <Button 
-        onClick={() => localStorage.removeItem('data')}
-        disabled={dataSet.length > 0 ? false : true}
-        variant="contained" 
-        color="primary">Generar Excel</Button>
-        }>
-            <ExcelSheet data={dataSet} name={tableName}>
-                <ExcelColumn label="Razón Social" value="nroDocRec"/>
-                <ExcelColumn label="Fecha de emisión" value="fecha"/>
-                <ExcelColumn label="Importe" value="importe"/>
-                <ExcelColumn label="Comprobante No." value="nroCmp"/>
-            </ExcelSheet>
-        </ExcelFile>
+        <>
+            <ExcelFile 
+            filename={fileName}
+            element={
+            <Button 
+            onClick={() => {
+                setLoading(true)
+                localStorage.removeItem('data');
+                setTimeout(() => {
+                    setLoading(false)
+                }) 
+            }}
+            disabled={dataSet.length > 0 ? false : true}
+            variant="contained" 
+            color="primary">Generar Excel</Button>
+            }>
+                <ExcelSheet data={dataSet} name={tableName}>
+                    <ExcelColumn label="Razón Social" value="nroDocRec"/>
+                    <ExcelColumn label="Fecha de emisión" value="fecha"/>
+                    <ExcelColumn label="Importe" value="importe"/>
+                    <ExcelColumn label="Comprobante No." value="nroCmp"/>
+                </ExcelSheet>
+            </ExcelFile>
+        </>
     );
 };
 

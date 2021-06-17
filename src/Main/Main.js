@@ -6,12 +6,14 @@ import './styles.css';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import { paths } from '../Routes/paths';
 import { useHistory } from 'react-router';
+import BackdropComponent from './Backdrop';
 
 const Main = () => {
 
     let localStore = localStorage.getItem('data');
     const history = useHistory();
     const [ bills, setBills ] = useState([]);
+    const [ loading, setLoading ] = useState(false);
     
     useEffect(() => {
         if (localStore) {
@@ -36,9 +38,11 @@ const Main = () => {
            </Typography>
            <Table bills={bills}/>
            <Footer 
+           setLoading={setLoading}
            filename="Honorarios para recategorización de Monotributo"
            tableName="Honorarios para recategorización de Monotributo"
            dataSet={bills}/>
+           <BackdropComponent loading={loading}/>
        </div>
     )
 };
