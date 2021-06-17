@@ -87,3 +87,18 @@
     margin-top: 20px;
     font-style: italic;
 }
+
+.ButtonCameraFixed {
+    position: absolute !important;
+    bottom: 40px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.ButtonCameraFixed > button {
+    width: 60px;
+    height: 60px;
+}
