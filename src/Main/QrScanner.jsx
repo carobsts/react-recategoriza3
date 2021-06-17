@@ -21,7 +21,7 @@ const QrScannerComponent = () => {
     };
 
     if (result) {
-        let code = result.text.split('=')[1];
+        let code = result.split('=')[1];
         let decode = atob(code);
         let localStore = localStorage.getItem('data') ? JSON.parse(localStorage.getItem('data')) : [];
         localStore.push(JSON.parse(decode));
@@ -32,7 +32,8 @@ const QrScannerComponent = () => {
     return(
       <div>
         <QrReader
-          facingMode="rear"
+          legacyMode={true}
+          facingMode="user"
           style={previewStyle}
           onScan={handleScan}
         />
