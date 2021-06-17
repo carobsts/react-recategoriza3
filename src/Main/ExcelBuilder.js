@@ -16,6 +16,7 @@ const ExcelBuilder = ({
         filename={fileName}
         element={
         <Button 
+        onClick={() => localStorage.removeItem('data')}
         disabled={dataSet.length > 0 ? false : true}
         variant="contained" 
         color="primary">Generar Excel</Button>
