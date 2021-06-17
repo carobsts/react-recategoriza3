@@ -19,12 +19,6 @@ const Main = () => {
         if (localStore) {
             let data = JSON.parse(localStore);
             setBills(data);
-        } else {
-            setLoading(true);
-            setTimeout(() => {
-                setLoading(false);
-                setBills([]);
-            }, 500)
         }
     }, [localStore]);
 
@@ -44,6 +38,7 @@ const Main = () => {
            </Typography>
            <Table bills={bills}/>
            <Footer 
+           setBills={setBills}
            setLoading={setLoading}
            filename="Honorarios para recategorización de Monotributo"
            tableName="Honorarios para recategorización de Monotributo"

@@ -6,11 +6,13 @@ const Footer = ({
     dataSet,
     fileName,
     tableName,
-    setLoading
+    setLoading,
+    setBills
 }) => {
     return (
         <div className="Footer__container">
             <ExcelBuilder
+            setBills={setBills}
             setLoading={setLoading}
             filename={fileName}
             tableName={tableName}

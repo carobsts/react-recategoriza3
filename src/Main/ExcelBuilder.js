@@ -10,7 +10,8 @@ const ExcelBuilder = ({
     dataSet,
     tableName,
     fileName, 
-    setLoading
+    setLoading,
+    setBills
 }) => {
     return (
         <>
@@ -22,6 +23,7 @@ const ExcelBuilder = ({
                 setLoading(true)
                 localStorage.removeItem('data');
                 setTimeout(() => {
+                    setBills([]);
                     setLoading(false)
                 }, 500) 
             }}
