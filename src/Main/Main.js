@@ -20,9 +20,6 @@ const Main = () => {
         }
     }, [localStore]);
 
-    let coso = atob('eyJ2ZXIiOjEsImZlY2hhIjoiMjAyMS0wNS0zMSIsImN1aXQiOjI3MzgxNTk3NzIwLCJwdG9WdGEiOjEsInRpcG9DbXAiOjExLCJucm9DbXAiOjM0LCJpbXBvcnRlIjoxMTIyMjAsIm1vbmVkYSI6IlBFUyIsImN0eiI6MSwidGlwb0RvY1JlYyI6ODAsIm5yb0RvY1JlYyI6MzA3MTU1NTM5NjgsInRpcG9Db2RBdXQiOiJFIiwiY29kQXV0Ijo3MTIyMDA3NjY2MDkzOX0=');
-    console.log('coso', JSON.parse(coso))
-
     return (
        <div className="App__container">
            <div className="App__header">
@@ -38,7 +35,9 @@ const Main = () => {
                Tu app pa' que no tengas que hacer el papelerío a manopla.
            </Typography>
            <Table bills={bills}/>
-           <Footer/>
+           <Footer 
+           tableName="Honorarios para recategorización de Monotributo"
+           dataSet={bills}/>
        </div>
     )
 };

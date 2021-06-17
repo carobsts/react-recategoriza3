@@ -1,13 +1,13 @@
-import { Button } from '@material-ui/core';
 import React from 'react';
+import ExcelBuilder from './ExcelBuilder';
 import './styles.css';
 
-const Footer = () => {
+const Footer = ({
+    dataSet
+}) => {
     return (
         <div className="Footer__container">
-            <Button variant="contained" color="primary">
-                Generar excel
-            </Button>
+            <ExcelBuilder dataSet={dataSet}/>
         </div>
     )
 };
