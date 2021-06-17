@@ -26,8 +26,6 @@ const Table = ({
                 key={bill.codAut}
                 bill={bill}/>
                 ).reverse()}
-                <Bill/>
-                <Bill/>
            </div>
        </div>
     )
